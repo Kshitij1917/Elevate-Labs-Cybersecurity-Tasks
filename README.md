@@ -139,3 +139,186 @@ This task involved analyzing a phishing email masquerading as a job interview in
 This task enhanced my understanding of **email-based phishing techniques** by examining a malicious message posing as a Zoho interview invitation. By carefully analyzing the sender’s address, email headers, URLs, and content formatting, I successfully identified multiple red flags. This exercise reinforced my capability to critically assess suspicious emails and equipped me with practical skills in threat detection and reporting.
 
 ---
+
+#Task 3 Windows Firewall Configuration and Testing Report
+
+**Project Title:** Windows Firewall Rule Creation and Validation  
+**Author:** Kshitij  
+**Operating System:** Windows  
+**Target IP Address:** 192.168.135.40  
+**Date of Configuration and Testing:** May 27, 2025  
+
+---
+
+## 1. Introduction
+
+Windows Firewall acts as a vital security layer for protecting systems from unauthorized access. It monitors and controls incoming and outgoing network traffic based on predefined rules. In this task, a custom firewall rule was created to block a specific port (Telnet – Port 23), and its effectiveness was verified.
+
+---
+
+## 2. Objective
+
+To create a Windows Firewall rule via the GUI that blocks traffic on port 23 (Telnet), test it using a network scanning method, and revert the configuration to its original state.
+
+---
+
+## 3. Procedure
+
+### 3.1 Listing Existing Rules
+
+**Method:** Using the Windows Firewall GUI interface.  
+Screenshot:  
+![Firewall rules](https://github.com/shivdev729/elevate_labs_task_04/blob/main/listed%20rules.JPG)
+
+---
+
+### 3.2 Creating a Rule to Block Port 23
+
+**Steps:**  
+1. Access “Windows Defender Firewall with Advanced Security”  
+2. Create a new **Inbound Rule**  
+3. Choose **Port**, specify **TCP**, and enter port number **23**  
+4. Select **Block the connection**  
+5. Apply rule to all profiles (Domain, Private, Public)  
+6. Name the rule appropriately  
+
+Screenshots:  
+![P1](https://github.com/shivdev729/elevate_labs_task_04/blob/main/p1.JPG)  
+![P2](https://github.com/shivdev729/elevate_labs_task_04/blob/main/p2.JPG)  
+![P3](https://github.com/shivdev729/elevate_labs_task_04/blob/main/p3.JPG)  
+![Telnet Blocked](https://github.com/shivdev729/elevate_labs_task_04/blob/main/telnet_blocked.JPG)
+
+---
+
+### 3.3 Validating the Rule
+
+**Method:** Attempted to scan or access the Telnet service from another host. The connection was successfully blocked by the firewall.  
+Screenshot:  
+![P4](https://github.com/shivdev729/elevate_labs_task_04/blob/main/p4.JPG)
+
+---
+
+### 3.4 Reverting the Configuration
+
+The created rule was deleted to restore the firewall to its original configuration.  
+Screenshot:  
+![Original](https://github.com/shivdev729/elevate_labs_task_04/blob/main/original_state.JPG)
+
+---
+
+## 4. Firewall Filtering Mechanism – Summary
+
+Windows Firewall filters traffic based on multiple parameters:
+
+- **IP Address**: Filters by source/destination IP (e.g., block a suspicious IP)
+- **Port Number**: Allows/denies specific ports (e.g., block Telnet port 23)
+- **Protocol**: Filters traffic by protocol like TCP, UDP, ICMP
+- **Traffic Direction**: Handles both inbound and outbound rules
+- **Application Filtering**: Allows rules specific to software (e.g., Chrome)
+- **Deep Packet Inspection**: Advanced firewalls inspect packet content
+
+### Rule Types:
+- **Allow**: Permits the traffic
+- **Deny**: Blocks the traffic
+- **Default Policy**: Blocks traffic unless a rule allows it
+
+### Decision Flow:
+Traffic → Checked Against Rules →  
+- Match Allow → Permitted  
+- Match Deny → Blocked  
+- No Match → Default Policy (usually deny)
+
+---
+
+## 5. Conclusion
+
+This task demonstrated the process of configuring a firewall rule to block a specific port, verifying its effect, and restoring default settings. Understanding and managing such rules is crucial in ensuring network security on Windows environments.
+
+---
+
+## Appendix
+
+- **Tool Used:** Windows Defender Firewall  
+- **Configuration Method:** GUI  
+- **Testing Method:** Port access attempt and confirmation of block  
+- **System Type:** Windows OS (Virtual or Native)  
+- **Scan Date:** May 27, 2025  
+
+
+# 📄 Task 4 – Elevate Labs Cybersecurity Internship  
+# Windows Firewall Configuration & Testing Documentation  
+
+**Target IP:** 192.168.135.40  
+**Operating System:** Windows  
+**Date of Scan:** May 27, 2025  
+
+---
+
+## 📄 Viewing Existing Firewall Rules  
+
+---
+
+## 📄 Creating a Rule to Block a Port  
+
+### ➤ Approach: GUI-Based Configuration  
+
+---
+
+## 📄 Validating the Firewall Rule  
+
+---
+
+## 📄 Restoring Initial Configuration  
+
+---
+
+# 🔒 Understanding Firewall Traffic Filtering – Summary  
+
+Firewalls serve as a **protective gateway** between secure internal systems and potentially dangerous external networks (like the internet). They analyze traffic and enforce **access control rules** to either allow or deny data packets.
+
+---
+
+## 🔍 Primary Filtering Parameters  
+
+### 1. **IP Address-Based Filtering**  
+- Screens traffic using **source** or **destination** IP information.  
+- _Example_: Prevent connections from blacklisted IP addresses.
+
+### 2. **Port-Based Filtering**  
+- Determines access by evaluating **TCP/UDP ports**.  
+- _Example_: Deny access to port 23 (Telnet); allow port 80 (HTTP).
+
+### 3. **Protocol Type**  
+- Filters data depending on the **communication protocol** in use (e.g., TCP, UDP, ICMP).  
+- _Example_: Block incoming ping (ICMP) requests for security.
+
+### 4. **Traffic Direction**  
+- **Inbound:** Data entering the system.  
+- **Outbound:** Data exiting the system.
+
+### 5. **Application-Level Filtering**  
+- Some firewalls can make decisions based on the **specific application** sending or receiving data.  
+- _Example_: Permit Google Chrome; restrict unknown executables.
+
+### 6. **Deep Packet Inspection (DPI)**  
+- Inspects the **contents** of network packets to detect and prevent threats like malware or sensitive data exfiltration.
+
+---
+
+## 📋 Rule Categories in Firewall Configuration  
+
+- **Allow Rules** – Let matching traffic through.  
+- **Block Rules** – Deny traffic that meets specific conditions.  
+- **Default Rule** – Applies to all unmatched traffic (often “deny all”).
+
+---
+
+## 🔁 Firewall Decision Process (Overview)  
+
+Data Flow → Apply Firewall Rules → Action:  
+→ If it fits an **Allow** rule → Traffic is permitted  
+→ If it fits a **Deny** rule → Traffic is rejected  
+→ If no rule matches → Apply the **default rule**, typically block by default
+
+---
+
