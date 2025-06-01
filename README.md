@@ -140,7 +140,7 @@ This task enhanced my understanding of **email-based phishing techniques** by ex
 
 ---
 
-#Task 3 Windows Firewall Configuration and Testing Report
+# Task 3 Windows Firewall Configuration and Testing Report
 
 **Project Title:** Windows Firewall Rule Creation and Validation  
 **Author:** Kshitij  
@@ -167,8 +167,6 @@ To create a Windows Firewall rule via the GUI that blocks traffic on port 23 (Te
 ### 3.1 Listing Existing Rules
 
 **Method:** Using the Windows Firewall GUI interface.  
-Screenshot:  
-![Firewall rules](https://github.com/shivdev729/elevate_labs_task_04/blob/main/listed%20rules.JPG)
 
 ---
 
@@ -182,27 +180,17 @@ Screenshot:
 5. Apply rule to all profiles (Domain, Private, Public)  
 6. Name the rule appropriately  
 
-Screenshots:  
-![P1](https://github.com/shivdev729/elevate_labs_task_04/blob/main/p1.JPG)  
-![P2](https://github.com/shivdev729/elevate_labs_task_04/blob/main/p2.JPG)  
-![P3](https://github.com/shivdev729/elevate_labs_task_04/blob/main/p3.JPG)  
-![Telnet Blocked](https://github.com/shivdev729/elevate_labs_task_04/blob/main/telnet_blocked.JPG)
-
 ---
 
 ### 3.3 Validating the Rule
 
 **Method:** Attempted to scan or access the Telnet service from another host. The connection was successfully blocked by the firewall.  
-Screenshot:  
-![P4](https://github.com/shivdev729/elevate_labs_task_04/blob/main/p4.JPG)
 
 ---
 
 ### 3.4 Reverting the Configuration
 
 The created rule was deleted to restore the firewall to its original configuration.  
-Screenshot:  
-![Original](https://github.com/shivdev729/elevate_labs_task_04/blob/main/original_state.JPG)
 
 ---
 
