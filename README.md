@@ -309,4 +309,73 @@ Data Flow → Apply Firewall Rules → Action:
 → If no rule matches → Apply the **default rule**, typically block by default
 
 ---
+# Task 6 Network Traffic Analysis with Wireshark
+
+This repository contains the capture file and analysis report for a network traffic analysis task conducted using **Wireshark**.
+
+---
+
+## 📁 Capture Details
+
+- **File Name:** `wireshark_Wi-FiLBT072.pcapng`
+- **Captured On:** June 4, 2025
+- **Duration:** 3 minutes 14 seconds
+- **Captured Packets:** 2536
+- **Displayed Packets:** 580 (22.9%)
+- **Interface:** Wi-Fi
+- **Tool Version:** Wireshark v4.4.6
+- **OS:** Windows 11 (64-bit)
+- **Processor:** Intel i5-1235U (12th Gen)
+
+---
+
+## 📊 Protocols Identified
+
+- **TCP** (Transmission Control Protocol)
+- **TLSv1.2** (Encrypted Web Communication)
+- **DNS** (Domain Name Resolution)
+
+---
+
+## ⚠ Expert Info Summary
+
+| Type        | Description                               | Count |
+|-------------|-------------------------------------------|-------|
+| ⚠ Warning   | D-SACK Sequences                          | 2     |
+| ⚠ Warning   | Out-of-Order Segments                     | 2     |
+| ⚠ Warning   | Previous Segments Not Captured            | 2     |
+| ℹ Note      | Suspected Retransmissions                 | 2     |
+| ℹ Note      | Duplicate ACKs                            | 7     |
+
+---
+
+## 🔍 Notable Observations
+
+- Multiple **TCP retransmissions** and **Duplicate ACKs** detected.
+- Use of **TLSv1.2** confirms encrypted HTTPS communication.
+- Occurrence of **TCP RST** and **FIN** flags indicating session terminations.
+
+---
+
+## 📷 Screenshots
+
+- ✅ Capture Statistics Summary
+- ✅ TCP Expert Information
+- ✅ Highlighted Packet Anomalies
+
+*(See `/screenshots/` folder)*
+
+---
+
+## 📝 Report
+
+A detailed analysis report (`Network_Analysis_Report.md`) is included in this repository. It covers:
+- Objective & Environment
+- Methodology
+- Detailed Protocol Analysis
+- Observations & Interpretation
+
+---
+
+
 
